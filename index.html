@@ -101,6 +101,27 @@
     font-size: 1.5rem;
   }
 
+  /* 返回主页导航 */
+  .nav-home {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+  }
+  .nav-home:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
   @keyframes bounce {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(-10px); }
@@ -333,6 +354,39 @@
     margin: 0 auto;
   }
 
+  .issue-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .issue-nav-btn {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-secondary);
+  }
+  .issue-nav-btn:hover:not(.disabled) {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .issue-nav-btn.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .issue-nav-current {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
   .footer .declaration {
     font-family: 'Noto Serif SC', serif;
     font-size: 1rem;
@@ -358,6 +412,9 @@
 </style>
 </head>
 <body>
+
+<!-- 返回主页 -->
+<a href="https://afuxh.github.io/fuqing-profile/" class="nav-home">← 扶清闲话</a>
 
 <!-- ===== 封面 ===== -->
 <div class="cover">
@@ -492,7 +549,7 @@
         <div class="tool-card">
           <div class="icon">🤖</div>
           <div class="name">AI工具链</div>
-          <div class="desc">DeepSeek + Claude辅助创作</div>
+          <div class="desc">DeepSeek + Kimi 辅助创作</div>
         </div>
         <div class="tool-card">
           <div class="icon">📊</div>
@@ -541,8 +598,12 @@
 
 <!-- ===== 页脚 ===== -->
 <div class="footer">
+  <div class="issue-nav">
+    <span class="issue-nav-btn disabled">← 上一期</span>
+    <span class="issue-nav-current">第 001 期</span>
+    <span class="issue-nav-btn disabled">下一期 →</span>
+  </div>
   <div class="declaration">
-    这是第001期个人月报。<br>
     承诺每月一期，直到2106年。<br>
     你可以看，但别改。
   </div>
