@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026年5月 · 个人月报 · 第001期</title>
+<meta name="description" content="扶清的个人月报第001期：2026年5月，齿轮与星光。客服值班、AI学习、技能开发、内容创作的一个月。">
+<meta name="keywords" content="个人月报,扶清闲话,AI学习,技能开发,内容创作,个人成长">
+<meta name="author" content="扶清">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+<meta property="og:title" content="2026年5月 · 个人月报 · 第001期">
+<meta property="og:description" content="扶清的个人月报第001期：齿轮与星光，重复与决定。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://afuxh.github.io/monthly-report/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2026年5月 · 个人月报 · 第001期">
+<meta name="twitter:description" content="扶清的个人月报第001期：齿轮与星光，重复与决定。">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap');
 
@@ -532,12 +543,34 @@
   ::-webkit-scrollbar-thumb:hover { background: rgba(251, 191, 36, 0.4); }
 
   /* ===== 响应式 ===== */
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    .cover-title { font-size: 2.5rem; }
+    .cover-subtitle { font-size: 1.1rem; }
+    .section-title { font-size: 1.6rem; }
+    .content { padding: 2.5rem 1.5rem; }
+    .progress-number { font-size: 3.5rem; }
+    .tool-grid { grid-template-columns: repeat(2, 1fr); }
+    .event-card { padding: 1.2rem; }
+  }
+  @media (max-width: 480px) {
     .cover-title { font-size: 2rem; }
     .cover-subtitle { font-size: 1rem; }
-    .section-title { font-size: 1.5rem; }
+    .section-title { font-size: 1.4rem; }
     .content { padding: 2rem 1rem; }
     .progress-number { font-size: 3rem; }
+    .tool-grid { grid-template-columns: 1fr; }
+    .cover-issue { font-size: 0.75rem; }
+    .cover-date { font-size: 0.75rem; }
+    .event-tag { font-size: 0.7rem; padding: 0.15rem 0.5rem; }
+    .tool-card .desc { font-size: 0.78rem; }
+    .issue-nav-btn { padding: 0.5rem 1rem; min-height: 36px; }
+  }
+  /* ===== 无障碍：减少动效 ===== */
+  @media (prefers-reduced-motion: reduce) {
+    .section { opacity: 1; transform: none; transition: none; }
+    .cover-scroll { animation: none; }
+    .progress-bar-fill { transition: none; }
+    .event-card, .tool-card, .insight-icon { transition: none; }
   }
 </style>
 </head>
@@ -548,7 +581,7 @@
 
 <!-- ===== 封面 ===== -->
 <div class="cover">
-  <img src="may2026_cover.jpg" alt="封面">
+  <img src="may2026_cover.jpg" alt="2026年5月个人月报封面：齿轮与星光">
   <div class="cover-overlay">
     <div class="cover-issue">第 001 期 / 960 期</div>
     <h1 class="cover-title">重复与决定</h1>
@@ -755,7 +788,7 @@
 
   // 进度条动画
   setTimeout(() => {
-    document.getElementById('progressFill').style.width = '0.1%';
+    document.getElementById('progressFill').style.width = '0.104%';
   }, 1000);
 </script>
 
