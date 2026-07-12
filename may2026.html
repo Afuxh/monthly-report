@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026年5月 · 个人月报 · 第001期</title>
+<meta name="description" content="扶清的个人月报第001期：2026年5月，齿轮与星光。客服值班、AI学习、技能开发、内容创作的一个月。">
+<meta name="keywords" content="个人月报,扶清闲话,AI学习,技能开发,内容创作,个人成长">
+<meta name="author" content="扶清">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>">
+<meta property="og:title" content="2026年5月 · 个人月报 · 第001期">
+<meta property="og:description" content="扶清的个人月报第001期：齿轮与星光，重复与决定。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://afuxh.github.io/monthly-report/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2026年5月 · 个人月报 · 第001期">
+<meta name="twitter:description" content="扶清的个人月报第001期：齿轮与星光，重复与决定。">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+  :root {
+    /* 深色星空主题 · 与扶清闲话主页统一 */
+    --bg: #0a0d22;
+    --bg-gradient: linear-gradient(135deg, #0a0d22 0%, #1a1f3a 50%, #0d1128 100%);
+    --card: rgba(18, 24, 51, 0.75);
+    --card-hover: rgba(26, 34, 69, 0.9);
+    --text: #e6f7ff;
+    --text2: #a0c4e0;
+    --text3: #6b8cae;
+    --blue: #4dabf7;
+    --cyan: #3bc9db;
+    --orange: #ffaa55;
+    --pink: #ff66aa;
+    --purple: #7d5fff;
+    --success: #51cf66;
+    --max-width: 1200px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --nav-height: 60px;
+    /* 兼容旧变量名 */
+    --night-deep: #0a0d22;
+    --text-primary: #e6f7ff;
+    --text-secondary: #a0c4e0;
+    --text-muted: #6b8cae;
+    --accent: #ffaa55;
+    --accent-teal: #4dabf7;
+    --card-bg: rgba(18, 24, 51, 0.75);
+    --card-border: rgba(77, 171, 247, 0.18);
+    --border: rgba(77, 171, 247, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text);
+    line-height: 1.8;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* 星空背景 - 与主页统一 */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 200%; height: 200%;
+    background:
+      radial-gradient(circle at 10% 20%, rgba(77,171,247,0.08) 0%, transparent 25%),
+      radial-gradient(circle at 90% 80%, rgba(125,95,255,0.1) 0%, transparent 30%),
+      radial-gradient(circle at 50% 50%, rgba(255,170,85,0.05) 0%, transparent 35%),
+      radial-gradient(circle at 30% 70%, rgba(59,201,219,0.06) 0%, transparent 25%);
+    z-index: -3;
+    animation: drift 150s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes drift { 0% { transform: translate(0, 0); } 100% { transform: translate(-50%, -50%); } }
+
+  /* ===== 封面 ===== */
+  .cover {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--bg-gradient);
+  }
+
+  .cover img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85) saturate(1.1);
+    display: block;
+  }
+
+  /* 封面底部渐变叠加 */
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 50%;
+    background: linear-gradient(to top, rgba(10,13,34,0.95) 0%, rgba(10,13,34,0.4) 40%, transparent 100%);
+    z-index: 0;
+  }
+
+  .cover-overlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .cover-issue {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.9rem;
+    color: var(--blue);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+
+  .cover-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255,170,85,0.6), 0 0 40px rgba(255,170,85,0.3);
+  }
+
+  .cover-subtitle {
+    font-size: 1.4rem;
+    color: var(--blue);
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(77,171,247,0.3);
+  }
+
+  .cover-date {
+    font-size: 0.85rem;
+    color: var(--text3);
+    letter-spacing: 0.25em;
+  }
+
+  .cover-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    animation: bounce 2s infinite;
+    color: var(--text3);
+    font-size: 1.2rem;
+    opacity: 0.6;
+  }
+
+  /* 返回主页导航 */
+  .nav-home {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.5rem 1.2rem;
+    background: rgba(18, 24, 51, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(77, 171, 247, 0.25);
+    border-radius: 20px;
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: var(--transition);
+  }
+  .nav-home:hover {
+    color: var(--orange);
+    border-color: rgba(255, 170, 85, 0.5);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+  }
+
+  /* ===== 内容区 ===== */
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .section {
+    margin-bottom: 5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .section-number {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.8rem;
+    color: var(--blue);
+    letter-spacing: 0.35em;
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(77, 171, 247, 0.25);
+    display: inline-block;
+  }
+
+  .section-body {
+    color: var(--text2);
+    font-size: 1.05rem;
+  }
+
+  .section-body p {
+    margin-bottom: 1rem;
+  }
+
+  .section-body strong {
+    color: var(--accent);
+  }
+
+  /* ===== 引用块 ===== */
+  .quote-block {
+    border-left: 2px solid rgba(77, 171, 247, 0.35);
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--card);
+    border-radius: 0 12px 12px 0;
+    font-family: 'Noto Serif SC', serif;
+    font-style: italic;
+    color: var(--text);
+  }
+
+  /* ===== 事件卡片 ===== */
+  .event-card {
+    background: var(--card);
+    border: 1px solid rgba(77, 171, 247, 0.18);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+  }
+
+  .event-card:hover {
+    transform: translateY(-2px);
+    background: var(--card-hover);
+    border-color: rgba(77, 171, 247, 0.35);
+  }
+
+  .event-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .tag-work { background: rgba(77, 171, 247, 0.15); color: var(--blue); border: 1px solid rgba(77, 171, 247, 0.3); }
+  .tag-create { background: rgba(81, 207, 102, 0.12); color: var(--success); border: 1px solid rgba(81, 207, 102, 0.25); }
+  .tag-learn { background: rgba(255, 170, 85, 0.12); color: var(--orange); border: 1px solid rgba(255, 170, 85, 0.25); }
+  .tag-life { background: rgba(125, 95, 255, 0.12); color: var(--purple); border: 1px solid rgba(125, 95, 255, 0.25); }
+  .tag-decision { background: rgba(255, 102, 170, 0.12); color: var(--pink); border: 1px solid rgba(255, 102, 170, 0.25); }
+
+  .event-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0.3rem;
+    color: var(--text);
+  }
+
+  .event-desc {
+    color: var(--text2);
+    font-size: 0.95rem;
+  }
+
+  /* ===== 认知更新 ===== */
+  .insight-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .insight-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card);
+    border: 1px solid rgba(77, 171, 247, 0.18);
+    border-radius: 50%;
+    transition: var(--transition);
+  }
+
+  .insight-item:hover .insight-icon {
+    border-color: rgba(77, 171, 247, 0.4);
+    background: var(--card-hover);
+  }
+
+  .insight-content h4 {
+    color: var(--blue);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+  }
+
+  .insight-content p {
+    color: var(--text2);
+    font-size: 0.95rem;
+  }
+
+  /* ===== 工具卡片 ===== */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .tool-card {
+    background: var(--card);
+    border: 1px solid rgba(77, 171, 247, 0.18);
+    border-radius: 14px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: var(--transition);
+  }
+
+  .tool-card:hover {
+    transform: translateY(-2px);
+    background: var(--card-hover);
+    border-color: rgba(77, 171, 247, 0.35);
+  }
+
+  .tool-card .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tool-card .name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+  }
+
+  .tool-card .desc {
+    font-size: 0.8rem;
+    color: var(--text3);
+  }
+
+  /* ===== 进度条 ===== */
+  .progress-bar {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(77, 171, 247, 0.18);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* 进度条背景装饰 - 齿轮纹理 */
+  .progress-bar::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -30%;
+    width: 200px; height: 200px;
+    border: 2px solid rgba(77, 171, 247, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .progress-bar::after {
+    content: '';
+    position: absolute;
+    bottom: -40%; left: -20%;
+    width: 150px; height: 150px;
+    border: 2px solid rgba(255, 170, 85, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .progress-number {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--blue), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .progress-label {
+    color: var(--text3);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .progress-bar-visual {
+    width: 100%;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue), var(--orange));
+    border-radius: 2px;
+    width: 0.1%;
+    transition: width 2s ease;
+  }
+
+  .progress-summary {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-top: 1.5rem;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== 页脚 ===== */
+  .footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text3);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .issue-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .issue-nav-btn {
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text3);
+    background: transparent;
+  }
+  .issue-nav-btn:hover:not(.disabled) {
+    border-color: var(--orange);
+    color: var(--orange);
+  }
+  .issue-nav-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  .issue-nav-current {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--blue), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  .footer .declaration {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1rem;
+    color: var(--text2);
+    margin-bottom: 1rem;
+  }
+
+  /* ===== 分隔线 - 星光风格 ===== */
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(77, 171, 247, 0.35), rgba(255, 170, 85, 0.3), transparent);
+    margin: 3rem auto;
+    border-radius: 1px;
+    position: relative;
+  }
+  .divider::before {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 170, 85, 0.5);
+    font-size: 10px;
+    opacity: 0.7;
+  }
+
+  /* ===== 滚动条 ===== */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: rgba(77, 171, 247, 0.2); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(77, 171, 247, 0.35); }
+
+  /* ===== 响应式 ===== */
+  @media (max-width: 768px) {
+    .cover-title { font-size: 2.5rem; }
+    .cover-subtitle { font-size: 1.1rem; }
+    .section-title { font-size: 1.6rem; }
+    .content { padding: 2.5rem 1.5rem; }
+    .progress-number { font-size: 3.5rem; }
+    .tool-grid { grid-template-columns: repeat(2, 1fr); }
+    .event-card { padding: 1.2rem; }
+  }
+  @media (max-width: 480px) {
+    .cover-title { font-size: 2rem; }
+    .cover-subtitle { font-size: 1rem; }
+    .section-title { font-size: 1.4rem; }
+    .content { padding: 2rem 1rem; }
+    .progress-number { font-size: 3rem; }
+    .tool-grid { grid-template-columns: 1fr; }
+    .cover-issue { font-size: 0.75rem; }
+    .cover-date { font-size: 0.75rem; }
+    .event-tag { font-size: 0.7rem; padding: 0.15rem 0.5rem; }
+    .tool-card .desc { font-size: 0.78rem; }
+    .issue-nav-btn { padding: 0.5rem 1rem; min-height: 36px; }
+  }
+  /* ===== 无障碍：减少动效 ===== */
+  @media (prefers-reduced-motion: reduce) {
+    .section { opacity: 1; transform: none; transition: none; }
+    .cover-scroll { animation: none; }
+    .progress-bar-fill { transition: none; }
+    .event-card, .tool-card, .insight-icon { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 返回主页 -->
+<a href="https://afuxh.github.io/fuqing-profile/" class="nav-home">← 扶清闲话</a>
+
+<!-- ===== 封面 ===== -->
+<div class="cover">
+  <img src="may2026_cover_v2.jpg?v=2" alt="2026年5月个人月报封面：齿轮与星光" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg, #d4c4a8 0%, #e8e2d8 50%, #c4d4d0 100%)'">
+  <div class="cover-overlay">
+    <div class="cover-issue">第 001 期 / 960 期</div>
+    <h1 class="cover-title">重复与决定</h1>
+    <p class="cover-subtitle">2026 年 5 月 · 个人月报</p>
+    <p class="cover-date">MAY 2026 — 扶清</p>
+  </div>
+  <div class="cover-scroll">↓</div>
+</div>
+
+<!-- ===== 内容 ===== -->
+<div class="content">
+
+  <!-- 1. 本月感觉 -->
+  <div class="section" data-animate>
+    <div class="section-number">SECTION 01</div>
+    <h2 class="section-title">本月感觉</h2>
+    <div class="section-body">
+      <div class="quote-block">
+        "这个月像安迪在肖申克监狱的屋顶上，为狱友争取到啤酒的时刻——在重复的制度化生活中，用一点点创作和学习，为自己争取到了片刻的自由。不同的是，这个月我还做了一个决定。"
+      </div>
+      <p>五月的感觉是<strong>齿轮与星光</strong>。白天是客服值班、投诉处理、400热线——重复的齿轮不停转动。夜晚是AI学习、技能开发、内容创作——屏幕上的星光一点点亮起来。</p>
+      <p>上旬是疲惫的积累，中旬是内心的挣扎，下旬是决心渐渐清晰。这个月最重要的不是发生了什么，而是<strong>做了一个决定</strong>——六月上完，就离开。</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 2. 核心事件 -->
+  <div class="section" data-animate>
+    <div class="section-number">SECTION 02</div>
+    <h2 class="section-title">核心事件</h2>
+    <div class="section-body">
+
+      <div class="event-card">
+        <span class="event-tag tag-work">工作</span>
+        <div class="event-title">客服值班与投诉处理</div>
+        <div class="event-desc">奕派400热线、三品牌工单检核、客户投诉处理。重复但必要，忍耐还在继续，但心里已经知道，快了。</div>
+      </div>
+
+      <div class="event-card">
+        <span class="event-tag tag-create">创作</span>
+        <div class="event-title">技能开发与虾评上传</div>
+        <div class="event-desc">开发AI技能、上传虾评平台、设计自动化工作流。用创作对冲工作的重复感，为下一步做准备。</div>
+      </div>
+
+      <div class="event-card">
+        <span class="event-tag tag-learn">学习</span>
+        <div class="event-title">AI工具学习与IP训练营</div>
+        <div class="event-desc">AI学习交流群活跃发言（432条）、IP训练营持续参与、内容创作方法论积累。</div>
+      </div>
+
+      <div class="event-card">
+        <span class="event-tag tag-life">关系</span>
+        <div class="event-title">独立成长与边界重建</div>
+        <div class="event-desc">彻底清理过去的关系，重新定义自我边界。独立不是孤独，是有能力选择谁进入自己的世界。</div>
+      </div>
+
+      <div class="event-card">
+        <span class="event-tag tag-decision">决策</span>
+        <div class="event-title">一个决定</div>
+        <div class="event-desc">五月埋下的种子，六月开花。忍耐还有最后三十天。</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3. 认知更新 -->
+  <div class="section" data-animate>
+    <div class="section-number">SECTION 03</div>
+    <h2 class="section-title">认知更新</h2>
+    <div class="section-body">
+
+      <div class="insight-item">
+        <div class="insight-icon">⚙️</div>
+        <div class="insight-content">
+          <h4>工作认知</h4>
+          <p>客服工作虽然重复，但每一次投诉处理都是一次问题解决能力的锻炼。忍耐不是软弱，是在积蓄力量——还有最后三十天。</p>
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-icon">🤖</div>
+        <div class="insight-content">
+          <h4>创作认知</h4>
+          <p>AI不是替代，而是放大器——用AI工具放大自己的创作能力。</p>
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-icon">🌱</div>
+        <div class="insight-content">
+          <h4>成长认知</h4>
+          <p>在忙碌中保持学习，是对抗重复感最好的方式。</p>
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-icon">🚪</div>
+        <div class="insight-content">
+          <h4>决策认知</h4>
+          <p>离职不是逃避，而是对更好生活的主动选择。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 4. 工具与方法 -->
+  <div class="section" data-animate>
+    <div class="section-number">SECTION 04</div>
+    <h2 class="section-title">工具与方法</h2>
+    <div class="section-body">
+      <div class="tool-grid">
+        <div class="tool-card">
+          <div class="icon">🔧</div>
+          <div class="name">虾评</div>
+          <div class="desc">技能上传与评测平台</div>
+        </div>
+        <div class="tool-card">
+          <div class="icon">🐙</div>
+          <div class="name">GitHub</div>
+          <div class="desc">代码托管与版本管理</div>
+        </div>
+        <div class="tool-card">
+          <div class="icon">🤖</div>
+          <div class="name">AI工具链</div>
+          <div class="desc">DeepSeek + Kimi 辅助创作</div>
+        </div>
+        <div class="tool-card">
+          <div class="icon">📊</div>
+          <div class="name">自动化</div>
+          <div class="desc">定时任务 + 自检流水线</div>
+        </div>
+      </div>
+      <p style="margin-top: 1.5rem;">工具链演进：<strong>手动操作 → AI辅助 → 自动化</strong>。每个月进步一点，复利会给出答案。</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 5. 下月展望 -->
+  <div class="section" data-animate>
+    <div class="section-number">SECTION 05</div>
+    <h2 class="section-title">下月展望</h2>
+    <div class="section-body">
+      <div class="quote-block">
+        <strong>具体目标</strong>：完成交接，开始新的探索。<br>
+        <strong>模糊期待</strong>：在自由中找到更多创作的灵感，建立更清晰的自我边界。
+      </div>
+      <p>六月会是忍耐的最后一个月，也是转折的开始。上完六月，就告别。具体发生了什么，会在下期月报中回顾。现在只需要知道：五月种下的种子，已经开始发芽了。</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 6. 80年进度 -->
+  <div class="section" data-animate>
+    <div class="section-number">SECTION 06</div>
+    <h2 class="section-title">80年进度</h2>
+    <div class="section-body">
+      <div class="progress-bar">
+        <div class="progress-number">001</div>
+        <div class="progress-label">/ 960 期 · 2026年5月</div>
+        <div class="progress-bar-visual">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-summary">"在重复中种下了离开的种子，在决定中找到了自己的声音。"</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== 页脚 ===== -->
+<div class="footer">
+  <div class="issue-nav">
+    <span class="issue-nav-btn disabled">← 上一期</span>
+    <span class="issue-nav-current">第 001 期</span>
+    <span class="issue-nav-btn disabled">下一期 →</span>
+  </div>
+  <div class="declaration">
+    承诺每月一期，直到2106年。<br>
+    你可以看，但别改。
+  </div>
+  <p>© 2026 扶清 · 80年连载 · 第001期</p>
+</div>
+
+<!-- ===== 滚动动画 ===== -->
+<script>
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+
+  // 进度条动画
+  setTimeout(() => {
+    document.getElementById('progressFill').style.width = '0.104%';
+  }, 1000);
+</script>
+
+</body>
+</html>
